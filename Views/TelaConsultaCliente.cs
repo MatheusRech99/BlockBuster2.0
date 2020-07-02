@@ -21,5 +21,9 @@ namespace BlockBuster.Views {
             }
             MessageBox.Show(cliente.ToString());
         }
+
+        private void TelaConsultaCliente_Load(object sender, EventArgs e) {
+
+        }
     }
 }

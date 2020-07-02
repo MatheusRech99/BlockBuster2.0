@@ -41,6 +41,7 @@ namespace BlockBuster.Views {
             }
             LocacaoModels locacao = LocacaoController.AdicionarLocacao(cliente);
             locacao.AdicionarFilmes(filme);
+            MessageBox.Show("Locação cadastrada!");
             this.Close();
         }
 

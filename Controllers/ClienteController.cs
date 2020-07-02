@@ -24,5 +24,14 @@ namespace BlockBuster.Controllers {
         public static List<ClienteModels> GetCliente() {
             return ClienteModels.GetCliente();
         }
+
+        public static void AtualizarCliente(int clienteid, string nome,string dataNascimento, string cpf, int diasDeDevolucao) {
+            
+            ClienteModels.AtualizarCliente(clienteid, nome, dataNascimento, cpf, diasDeDevolucao);
+        }
+
+        public static void DeletarCliente(int clienteid) {
+            ClienteModels.DeletarCliente(clienteid);
+        }
     }
 }

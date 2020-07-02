@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.button2 = new System.Windows.Forms.Button();
             this.listView1 = new System.Windows.Forms.ListView();
             this.IdHeader = new System.Windows.Forms.ColumnHeader();
@@ -35,7 +36,11 @@
             this.dataNascimentoHeader = new System.Windows.Forms.ColumnHeader();
             this.cpfHeader = new System.Windows.Forms.ColumnHeader();
             this.diasDevolucaoHeader = new System.Windows.Forms.ColumnHeader();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.selecionarBtn = new System.Windows.Forms.Button();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // button2
@@ -62,6 +67,7 @@
             this.dataNascimentoHeader,
             this.cpfHeader,
             this.diasDevolucaoHeader});
+            this.listView1.ContextMenuStrip = this.contextMenuStrip1;
             this.listView1.FullRowSelect = true;
             this.listView1.HideSelection = false;
             this.listView1.Location = new System.Drawing.Point(12, 12);
@@ -103,6 +109,28 @@
             this.diasDevolucaoHeader.Text = "Dias Devolução";
             this.diasDevolucaoHeader.Width = 95;
             // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem1,
+            this.toolStripMenuItem2});
+            this.contextMenuStrip1.Name = "listBoxContextMenu";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(112, 48);
+            this.contextMenuStrip1.Text = "Penis";
+            this.contextMenuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.contextMenuStrip1_ItemClicked);
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(111, 22);
+            this.toolStripMenuItem1.Text = "Alterar";
+            // 
+            // toolStripMenuItem2
+            // 
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(111, 22);
+            this.toolStripMenuItem2.Text = "Deletar";
+            // 
             // selecionarBtn
             // 
             this.selecionarBtn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
@@ -133,6 +161,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TelaListaCliente";
             this.Load += new System.EventHandler(this.TelaListaCliente_Load);
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -146,5 +175,8 @@
         private System.Windows.Forms.ColumnHeader cpfHeader;
         private System.Windows.Forms.ColumnHeader diasDevolucaoHeader;
         private System.Windows.Forms.Button selecionarBtn;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
     }
 }

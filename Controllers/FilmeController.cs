@@ -25,5 +25,13 @@ namespace BlockBuster.Controllers {
         public static FilmeModels GetFilme(int Filmeid) {
             return FilmeModels.GetFilme(Filmeid);
         }
+
+        public static void AtualizarFilme(int filmeid, string titulo, string sinopse, string dataLancamento, double preco, int estoque) {
+            FilmeModels.AtualizarFilme(filmeid, titulo, sinopse, dataLancamento, preco, estoque);
+        }
+
+        public static void DeletarFilme(int filmeid) {
+            FilmeModels.DeletarFilme(filmeid);
+        }
     }
 }

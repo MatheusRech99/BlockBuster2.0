@@ -41,6 +41,28 @@ namespace BlockBuster.Models {
                 select filme).First();
         }
 
+        public static void AtualizarFilme(int filmeid, string titulo, string sinopse, string dataLancamento, double preco, int estoque) {
+            var db = new Context();
+            try {
+                FilmeModels filme = db.Filmes.First(filme => filme.FilmeId == filmeid);
+                filme.Titulo = titulo;
+                filme.Sinopse = sinopse;
+                filme.DataLancamento = dataLancamento;
+                filme.Preco = preco;
+                filme.Estoque = estoque;
+                db.SaveChanges();
+            } catch {
+                throw new ArgumentException();
+            }
+        }
+
+        public static void DeletarFilme(int filmeid) {
+            var db = new Context();
+            FilmeModels filme = db.Filmes.First(filme => filme.FilmeId == filmeid);
+            db.Remove(filme);
+            db.SaveChanges();
+        }
+
         public override string ToString() {
             var db = new Context();
             int quantidadeLocacao = (

@@ -14,11 +14,7 @@ namespace BlockBuster.Views {
             if (selecionavel) {
                 selecionarBtn.Visible = true;
             }
-            var clientes = ClienteModels.GetCliente();
-            foreach (var cliente in clientes) {
-                string[] row = { cliente.ClienteId.ToString(), cliente.Nome, cliente.DataNascimento, cliente.CPF, cliente.DiasDeDevolucao.ToString() };
-                listView1.Items.Add(new ListViewItem(row));
-            }
+            AtualizarLista();
         }
 
         private void button2_Click(object sender, EventArgs e) {
@@ -43,6 +39,29 @@ namespace BlockBuster.Views {
             ClienteId = int.Parse(listView1.SelectedItems[0].Text);
             Sucesso = true;
             this.Close();
+        }
+
+        private void contextMenuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e) {
+            if (listView1.SelectedItems.Count <= 0) return;
+            ClienteId = int.Parse(listView1.SelectedItems[0].Text);
+            if (e.ClickedItem.Text.Equals("Alterar")) {
+                ClienteModels cliente = ClienteModels.GetCliente(ClienteId);
+                TelaCadastroCliente tcc = new TelaCadastroCliente(cliente);
+                tcc.ShowDialog();
+            } else if (e.ClickedItem.Text.Equals("Deletar")) {
+                ClienteModels.DeletarCliente(ClienteId);
+                MessageBox.Show("Cliente deletado com sucesso!");
+            }
+            AtualizarLista();
+        }
+
+        public void AtualizarLista() {
+            listView1.Items.Clear();
+            var clientes = ClienteModels.GetCliente();
+            foreach (var cliente in clientes) {
+                string[] row = { cliente.ClienteId.ToString(), cliente.Nome, cliente.DataNascimento, cliente.CPF, cliente.DiasDeDevolucao.ToString() };
+                listView1.Items.Add(new ListViewItem(row));
+            }
         }
     }
 }

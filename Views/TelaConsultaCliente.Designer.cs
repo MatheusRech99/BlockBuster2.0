@@ -90,6 +90,7 @@
             this.Name = "TelaConsultaCliente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TelaConsultaCliente";
+            this.Load += new System.EventHandler(this.TelaConsultaCliente_Load);
             ((System.ComponentModel.ISupportInitialize)(this.clienteIdNum)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.button2 = new System.Windows.Forms.Button();
             this.listView1 = new System.Windows.Forms.ListView();
             this.IdHeader = new System.Windows.Forms.ColumnHeader();
@@ -35,8 +36,12 @@
             this.sinopseHeader = new System.Windows.Forms.ColumnHeader();
             this.dataLancamentoHeader = new System.Windows.Forms.ColumnHeader();
             this.precoHeader = new System.Windows.Forms.ColumnHeader();
-            this.selecionarBtn = new System.Windows.Forms.Button();
             this.estoqueHeader = new System.Windows.Forms.ColumnHeader();
+            this.selecionarBtn = new System.Windows.Forms.Button();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // button2
@@ -64,6 +69,7 @@
             this.dataLancamentoHeader,
             this.precoHeader,
             this.estoqueHeader});
+            this.listView1.ContextMenuStrip = this.contextMenuStrip1;
             this.listView1.FullRowSelect = true;
             this.listView1.HideSelection = false;
             this.listView1.Location = new System.Drawing.Point(12, 12);
@@ -104,6 +110,11 @@
             this.precoHeader.Name = "precoHeader";
             this.precoHeader.Text = "Preço";
             // 
+            // estoqueHeader
+            // 
+            this.estoqueHeader.Name = "estoqueHeader";
+            this.estoqueHeader.Text = "Estoque";
+            // 
             // selecionarBtn
             // 
             this.selecionarBtn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
@@ -118,10 +129,27 @@
             this.selecionarBtn.Visible = false;
             this.selecionarBtn.Click += new System.EventHandler(this.selecionarBtn_Click);
             // 
-            // estoqueHeader
+            // toolStripMenuItem1
             // 
-            this.estoqueHeader.Name = "estoqueHeader";
-            this.estoqueHeader.Text = "Estoque";
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(111, 22);
+            this.toolStripMenuItem1.Text = "Alterar";
+            // 
+            // toolStripMenuItem2
+            // 
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(111, 22);
+            this.toolStripMenuItem2.Text = "Deletar";
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem1,
+            this.toolStripMenuItem2});
+            this.contextMenuStrip1.Name = "listBoxContextMenu";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(112, 48);
+            this.contextMenuStrip1.Text = "Penis";
+            this.contextMenuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.contextMenuStrip1_ItemClicked);
             // 
             // TelaListaFilme
             // 
@@ -139,6 +167,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TelaListaFilme";
             this.Load += new System.EventHandler(this.TelaListaCliente_Load);
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -153,5 +182,8 @@
         private System.Windows.Forms.ColumnHeader precoHeader;
         private System.Windows.Forms.Button selecionarBtn;
         private System.Windows.Forms.ColumnHeader estoqueHeader;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
     }
 }

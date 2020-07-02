@@ -1,6 +1,8 @@
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Windows.Forms;
 using BlockBuster.Repositories;
 
@@ -30,6 +32,27 @@ namespace BlockBuster.Models {
             var db = new Context();
             db.Clientes.Add(this);
             db.SaveChanges();
+        }
+
+        public static void AtualizarCliente(int clienteid, string nome, string dataNascimento, string cpf, int diasDeDevolucao) {
+            var db = new Context();
+            try {
+                ClienteModels cliente = db.Clientes.First(cliente => cliente.ClienteId == clienteid);
+                cliente.Nome = nome;
+                cliente.CPF = cpf;
+                cliente.DataNascimento = dataNascimento;
+                cliente.DiasDeDevolucao = diasDeDevolucao;
+                db.SaveChanges();
+            } catch {
+                throw new ArgumentException();
+            }
+        }
+
+        public static void DeletarCliente(int clienteid) {
+            var db = new Context();
+            ClienteModels cliente = db.Clientes.First(cliente => cliente.ClienteId == clienteid);
+            db.Remove(cliente);
+            db.SaveChanges();     
         }
 
         public void AtribuirLocacao(LocacaoModels locacao) {
