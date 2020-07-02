@@ -1,2 +1,2 @@
-# BlockBuster2.0
- Projeto blockbuster com MVC, SGBD e GUI.
+# BlockBusterGUI
+ Projeto BlockBuster com integração ao banco, MVC e Interfaces Gráficas
